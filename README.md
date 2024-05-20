@@ -73,3 +73,17 @@ Otras mejoras es que el el esquema de la tabla de SQLite se puede definir de for
 Se pueden evaluar formas de batch inserting para escribir varias lineas a la vez o de forma simultanea para poder ahorrar tiempo, o paralelizar la iteración por las carpetas.
 
 Actualmente el código escribe el archivo .csv desde cero cada vez que se ejecuta, cuando nos gustaría que las lineas nuevas se ejecuten desde el punto en que quedó la iteración por las carpetas. Esto en una segunda iteración hay que arreglarlo porque no queremos perder datos. 
+
+# Parte 2 y 3: Data Modelling
+
+En el jupyter notebook `predictive_modelling.ipynb` se detalla paso a paso el procedimiento seguido para el análisis
+
+# Parte 4: Bonus
+
+Se programan los siguientes scripts:
+1. `full_data_divider.py` para dividir la data completa en 25 csvs de 1000 filas cada uno
+2. `api.py` API en FastAPI que recibe un csv y devuelve el score logrado 
+3. `model.py` Modelo de predicción (Regresión lineal) y lógica para poder reentrenar el modelo
+4. `api_test.py` archivo para poder hacer tests de la API
+
+Además, se programa un Dockerfile para poder correr la API en una imagen Docker, y así por ejemplo, subirla a alguna nube de nuestra preferencia como GCP o AWS.
